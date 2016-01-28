@@ -2,7 +2,7 @@
 
 <ul>
 <% @products.each do |product| %>
-  <li><a href="products/<%= "#{product.id}" %>"><%= "#{product.name}" %></a> <%= "-- #{product.description} -- #{product.price_in_cents}" %></li>
+  <li><a href="products/<%= "#{product.id}" %>"><%= "#{product.name}" %></a> <%= "-- #{product.description} -- #{product.formatted_price}" %></li>
 <% end %>
 </ul>
 

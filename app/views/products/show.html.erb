@@ -4,5 +4,5 @@
 <h3>Description</h3>
 <p><%= @product.description %></p>
 <h3>Price (cents)</h3>
-<p><%= "#{@product.price_in_cents}"%></p>
+<p><%= "#{@product.formatted_price}"%></p>
 <p><%= link_to "Edit", edit_product_path %></p>
