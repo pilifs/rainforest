@@ -6,3 +6,4 @@
 <h3>Price (cents)</h3>
 <p><%= "#{@product.formatted_price}"%></p>
 <p><%= link_to "Edit", edit_product_path %></p>
+<p><%= link_to "Delete", @product, method: :delete, data: {confirm: "Are you sure?"} %></p>
