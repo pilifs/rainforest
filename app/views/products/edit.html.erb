@@ -2,22 +2,4 @@
 
 <h1>Edit <%= @product.name %></h1>
 
-<%= form_for @product do |f| %>
-  <p>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  </p>
-
-  <p>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  </p>
-
-  <p>
-  <%= f.label :price_in_cents %>
-  <%= f.number_field :price_in_cents %>
-  </p>
-
-  <%= f.submit %>
-
-<% end %>
+<%= render 'form' %>
