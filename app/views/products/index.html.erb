@@ -1,0 +1,7 @@
+<h1>Products (<%= @products.count %>)</h1>
+
+<ul>
+<% @products.each do |product| %>
+  <li><a href="products/<%= "#{product.id}" %>"><%= "#{product.name}" %></a> <% "-- #{product.description} -- #{product.price_in_cents}" %></li>
+<% end %>
+</ul>
