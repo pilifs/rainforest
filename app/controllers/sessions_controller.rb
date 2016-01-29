@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = numericality
+    session[:user_id] = nil
     redirect_to products_url, notice: "Logged out!"
   end
 end
