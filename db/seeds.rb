@@ -24,6 +24,13 @@ Product.create(
   price_in_cents: 75
 )
 
+User.create(
+  name: "Filip",
+  email: "filips@gmail.com",
+  password: "filip",
+  password_confirmation: "filip"
+)
+
 # Player.create(
 #   display_name: "cstaikos",
 #   slack_handle: "cstaikos",
