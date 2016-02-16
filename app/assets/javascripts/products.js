@@ -3,7 +3,7 @@ $(document).on('ready page:load', function() {
       event.preventDefault();
       var searchValue = $('#search').val();
 
-      $.get('/products?search=' + searchValue)
+      $.getScript('/products?search=' + searchValue);
         .done(function(data){
           console.log(data);
           $('#products').html(data);
