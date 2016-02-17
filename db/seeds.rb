@@ -6,6 +6,16 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.destroy_all
+Product.destroy_all
+
+User.create(
+  name: "Filip",
+  email: "filips@gmail.com",
+  password: "filip",
+  password_confirmation: "filip"
+)
+
 Product.create(
   name: "Banana",
   description: "Yellow fruit that people eat",
@@ -24,17 +34,12 @@ Product.create(
   price_in_cents: 75
 )
 
-User.create(
-  name: "Filip",
-  email: "filips@gmail.com",
-  password: "filip",
-  password_confirmation: "filip"
-)
+100.times do |i|
 
-# Player.create(
-#   display_name: "cstaikos",
-#   slack_handle: "cstaikos",
-#   wins: 0,
-#   losses: 0,
-#   games_played: 0
-# )
+Product.create({
+  name: "Product#{i}",
+  description: "Description#{i}",
+  price_in_cents: i
+  }
+)
+end
