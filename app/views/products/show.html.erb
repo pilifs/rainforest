@@ -14,9 +14,9 @@
 </div>
 
 <% if current_user %>
-  <h4>New Review</h4>
+    <h4>New Review</h4>
 
-    <%= form_for [@product, @review], :remote => true do |f| %>
+    <%= form_for [@product, @review], :remote => true, class: "form-x" do |f| %>
 
     <div id="review-form-errors">
       <%= render :partial => "/products/review_form_errors" %>
@@ -34,3 +34,19 @@
   <% else %>
     <p>Please <%= link_to "log in", new_session_path %> to add a review.</p>
 <% end %>
+
+<script type="text/javascript">
+  $(function() {
+     $("#new_review")
+        .on('ajax:beforeSend', function() { // set this code to happen just before the ajax request is made
+          $("input[type='submit']") // make changes to the submit button
+            .val('Saving...') // change the text on the button
+            .attr('disabled', 'disabled'); // disable the button
+        })
+        .on('ajax:complete', function() {
+          $("input[type='submit']")
+            .val('Create Review')
+            .removeAttr('disabled');
+        });
+  });
+</script>
